@@ -1,0 +1,16 @@
+[Unit]
+Description=UPS E-Paper Runtime Display
+After=nut-server.service
+Requires=nut-server.service
+
+[Service]
+Type=simple
+Environment=UPS_NAME=GOLDENMATE
+Environment=INTERVAL_AC=10
+Environment=INTERVAL_BATT=5
+ExecStart=/usr/bin/python3 /opt/ups-epd/ups_epd.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

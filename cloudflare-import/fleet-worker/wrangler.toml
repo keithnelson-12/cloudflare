@@ -1,0 +1,20 @@
+name = "fleet-worker"
+main = "src/index.js"
+compatibility_date = "2026-03-18"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fleet-control"
+database_id = "7196d9d2-30a6-4bca-99be-e831a631b0ff"
+
+[vars]
+# Set via `wrangler secret put CENTRAL_TOKEN`
+# CENTRAL_TOKEN = ""
+
+[[routes]]
+pattern = "fleet-api.tunnelremote.com/*"
+zone_name = "tunnelremote.com"
+
+[[r2_buckets]]
+binding = "ARTIFACTS"
+bucket_name = "ups-artifacts"

@@ -1,0 +1,8 @@
+tunnel: d31f0298-33c9-46d7-9441-0b6f811ab7de
+credentials-file: /etc/cloudflared/d31f0298-33c9-46d7-9441-0b6f811ab7de.json
+ingress:
+  - hostname: ups-pixhq-web.tunnelremote.com
+    service: http://localhost:80
+  - hostname: ups-pixhq-ssh.tunnelremote.com
+    service: ssh://localhost:22
+  - service: http_status:404

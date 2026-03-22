@@ -1,0 +1,14 @@
+{
+  "name": "fleet-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "d1:migrate": "wrangler d1 migrations apply fleet-control"
+  },
+  "devDependencies": {
+    "wrangler": "^4.35.0"
+  }
+}

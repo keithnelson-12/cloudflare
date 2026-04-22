@@ -28,6 +28,10 @@ REQ=(
   ups.conf
   upsd.users
   upsmon.conf
+  # Installer scripts — pulled by the install-time flow so we don't need
+  # to bake UPS-specific code into every SD card at flash time.
+  ups-install-bundle.sh
+  ups-install-status.sh
 )
 
 for f in "${REQ[@]}"; do

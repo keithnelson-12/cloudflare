@@ -14,9 +14,9 @@ Environment=TRANSITION_DELAY_TO_BATT=1.0
 Environment=TRANSITION_DELAY_TO_AC=10.0
 Environment=ESTIMATE_ONLINE_RUNTIME=1
 Environment=MODEL_STATE_PATH=/var/lib/ups-epd/runtime_model.json
-Environment=MODEL_ALPHA=0.2
 Environment=MODEL_MIN_WATTS=20
 Environment=UPS_RATED_WATTS=0
+Environment=BOGUS_OL_RUNTIME_THRESHOLD_S=300
 ExecStart=/usr/bin/python3 /opt/ups-epd/ups_epd.py
 Restart=always
 RestartSec=5

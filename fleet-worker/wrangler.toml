@@ -8,8 +8,16 @@ database_name = "fleet-control"
 database_id = "7196d9d2-30a6-4bca-99be-e831a631b0ff"
 
 [vars]
-# Set via `wrangler secret put CENTRAL_TOKEN`
-# CENTRAL_TOKEN = ""
+# Defaults overridable by worker secret:
+CF_BASE_DOMAIN = "tunnelremote.com"
+CF_WEB_SERVICE = "http://localhost:5001"
+
+# Worker secrets (set with `wrangler secret put <NAME>`):
+# - CENTRAL_TOKEN          : global bearer for /api/artifacts/ups/*
+# - DEVICE_TOKENS_JSON     : legacy per-device auth map (fallback; new devices register in D1)
+# - STATION_TOKEN          : shared bearer for the flash station at /api/flash/*
+# - CF_API_TOKEN_BROKER    : scoped CF API token with tunnel + DNS CRUD for tunnelremote.com
+#                            zone (used by /api/flash/create-tunnel)
 
 [[routes]]
 pattern = "fleet-api.tunnelremote.com/*"
